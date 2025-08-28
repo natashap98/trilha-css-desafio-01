@@ -1,55 +1,58 @@
-@import url("reset.css");
+@import url('reset.css');
 
+/* === ESTILOS GERAIS === */
 body {
-  background-color: black;
+  background: black;
   color: white;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 h2 {
   font-size: 2rem;
   font-weight: bold;
-  letter-spacing: 4px;
   text-transform: uppercase;
-  color: #33a8db;
+  letter-spacing: 4px;
+  color: #33A8DB;
   margin-bottom: 24px;
 }
 
 p {
   color: white;
+  line-height: 1.5;
 }
 
 section {
-  margin: 100px auto;
+  margin: 80px auto;
+  width: 90%;
+  max-width: 800px;
 }
 
+/* === BANNER === */
 .banner {
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(49, 168, 221, 0.2),
-      rgba(0, 0, 0, 0.6)
-    ),
-    url("../images/banner.png") no-repeat center/cover;
-  height: 600px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(49, 168, 221, 0.2), rgba(0, 0, 0, 0.6)),
+              url('../images/banner.png') no-repeat center/cover;
+  min-height: 100vh;
   padding-top: 60px;
-  border-bottom: 1px solid #33a8db80;
+  border-bottom: 1px solid #33A8DB80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .banner .banner-content {
-  width: 600px;
-  margin: auto;
-  text-align: center;
-  color: white;
+  width: 90%;
+  max-width: 600px;
 }
 
 .banner h1 {
   font-size: 2.5rem;
   font-weight: 900;
   text-transform: uppercase;
-  color: transparent;
-  background: -webkit-linear-gradient(#33a8db, #1472b7);
-  background-clip: text;
+  background: -webkit-linear-gradient(#33A8DB, #1472B7);
   -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .banner p {
@@ -73,50 +76,56 @@ section {
   display: block;
 }
 
+/* === BOTÃO === */
 .banner .banner-content button {
   padding: 16px 32px;
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 4px;
-  color: #31a8dd;
+  color: #31A8DD;
   background: transparent;
   border: 2px solid transparent;
-  border-image: linear-gradient(#3ba1cd, #1572b7);
+  border-image: linear-gradient(#3BA1CD, #1572B7);
   border-image-slice: 10;
   border-radius: 30px;
+  cursor: pointer;
 }
 
+/* === CONTEÚDO DO CURSO === */
 #course-content {
-  width: 800px;
   text-align: center;
 }
 
-#course-content .modules-list {
+.modules-list {
   margin: 24px 0;
 }
 
-#course-content .modules-list .module {
+.module {
+  background: #252525;
+  border: 1px solid #33A8DB;
   color: white;
-  width: 530px;
+  width: 100%;
+  max-width: 530px;
   margin: 0 auto 24px;
-  border: 1px solid #33a8db;
-  background-color: #252525;
   padding: 16px;
   border-radius: 100px;
   box-shadow: inset -5px 6px 8px rgba(0, 0, 0, 0.7);
 }
 
-#course-content .modules-list .module span {
-  color: #33a8db;
+.module span {
+  color: #33A8DB;
 }
 
+/* === TRANSFORME O MUNDO === */
 #transform-world {
-  height: 560px;
-  padding: 200px;
   background: url("../images/woman-code.png") fixed center/cover;
-  border-top: 1px solid #33a8db80;
-  border-bottom: 1px solid #33a8db80;
+  padding: 200px;
+  min-height: 560px;
+  border-top: 1px solid #33A8DB80;
+  border-bottom: 1px solid #33A8DB80;
+  display: flex;
+  align-items: center;
 }
 
 #transform-world p {
@@ -124,34 +133,74 @@ section {
   font-weight: 900;
   text-transform: lowercase;
   max-width: 250px;
-  text-shadow: 3px 2px #33a8db;
+  text-shadow: 3px 2px #33A8DB;
 }
 
+/* === DESAFIOS PROFISSIONAIS === */
 #professional-challenges {
-  width: 800px;
   text-align: center;
 }
 
 #professional-challenges img {
   margin: 32px 0;
+  width: 100%;
+  max-width: 100%;
 }
 
+/* === RODAPÉ === */
 footer {
   padding: 60px 0;
   text-align: center;
-  background-image: linear-gradient(
-    rgba(50, 168, 219, 0),
-    rgba(50, 168, 219, 0.2)
-  );
-  border-top: 1px solid #33a8db80;
+  background: linear-gradient(rgba(50, 168, 219, 0), rgba(50, 168, 219, 0.2));
+  border-top: 1px solid #33A8DB80;
 }
 
 footer .dio-logo {
   width: 300px;
+  max-width: 80%;
 }
 
 footer a {
   font-weight: bold;
-  color: #33a8db;
+  color: #33A8DB;
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+
+  .banner h1 {
+    font-size: 2rem;
+  }
+
+  .banner p {
+    font-size: 1rem;
+  }
+
+  .banner .logo {
+    width: 180px;
+    height: 180px;
+  }
+
+  #transform-world {
+    padding: 100px 20px;
+    background-attachment: scroll;
+  }
+
+  #transform-world p {
+    font-size: 1.75rem;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .module {
+    width: 90%;
+  }
+
+  footer .dio-logo {
+    width: 200px;
+  }
 }
